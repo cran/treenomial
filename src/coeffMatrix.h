@@ -101,9 +101,9 @@ inline sp_cx_mat wedgeTipLabel(sp_cx_mat &A, sp_cx_mat &B){
   return(resMat);
 }
 
-inline cx_rowvec wedgeConv(cx_rowvec &A, cx_rowvec &B){
+inline cx_rowvec wedgeConv(cx_rowvec &A, cx_rowvec &B, cx_double y){
   cx_rowvec res = conv(A, B);
-  res[0] += cx_double(1, 1);
+  res[0] += y;
   return(res);
 }
 
@@ -193,10 +193,7 @@ inline mat coeffMatrixReal(std::vector<std::string> wedgeOrder){
   return(mat(subCoeffMats.back()));
 }
 
-inline cx_rowvec coeffMatrixComplex(std::vector<std::string> wedgeOrder){
-
-
-
+inline cx_rowvec coeffMatrixComplex(std::vector<std::string> wedgeOrder, cx_double y){
   long unsigned int j = 0;
   int subTreeNum = 2;
   std::string op1;
@@ -211,8 +208,8 @@ inline cx_rowvec coeffMatrixComplex(std::vector<std::string> wedgeOrder){
 
 
   cx_rowvec cherry(3,fill::zeros);
-  cherry[0] =   cx_double(1, 1);
-  cherry[2] =   cx_double(1, 0);
+  cherry[0] = y;
+  cherry[2] = cx_double(1, 0);
 
   subCoeffMats[0] = leaf;
   subCoeffMats[1] = cherry;
@@ -246,7 +243,7 @@ inline cx_rowvec coeffMatrixComplex(std::vector<std::string> wedgeOrder){
 
     cx_rowvec  op1Mat = subCoeffMats[subCoeffOrder.find(op1)->second];
     cx_rowvec  op2Mat = subCoeffMats[subCoeffOrder.find(op2)->second];
-    subCoeffMats.push_back(wedgeConv(op1Mat,op2Mat));
+    subCoeffMats.push_back(wedgeConv(op1Mat,op2Mat,y));
 
 
 

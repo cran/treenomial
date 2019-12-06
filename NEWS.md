@@ -1,8 +1,14 @@
+# treenomial 1.1.1
+
+* Fixed errors when checking input arguments to functions 
+
+* added a variable names option for treeToPoly to print variable names on corresponding coefficient matrices rows and columns 
+
+* added a option to convert to polynomials evaluated at a specified y rather than at fixed y = 1+1i 
+
 # treenomial 1.0.1
 
 * Fixed a bug in the treeToPoly function 
-
-* Fixed errors when checking input arguments to functions 
 
 # treenomial 1.0.0
 

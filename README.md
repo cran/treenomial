@@ -10,8 +10,8 @@ The package **treenomial** is an application of polynomials that
 uniquely describe trees. It provides tools for tree analysis and
 comparison based on polynomials. The core functions are:
 
-  - **`treeToPoly()`**: convert trees to tree distinguishing polynomials
-    described with coefficient matrices
+  - **`treeToPoly()`**: convert rooted unlabeled binary trees to tree
+    distinguishing polynomials described with coefficient matrices
 
   - **`polyToDistMat()`**: construct a distance matrix from multiple
     coefficient matrices using a distance measure
@@ -27,7 +27,7 @@ To install using [CRAN](https://cran.r-project.org/package=treenomial):
 
     install.packages("treenomial")
 
-The development version can be installed with the ‘devtools’ package:
+For the development version:
 
     library(devtools)
     install_github("mattgou1d/treenomial")
@@ -51,9 +51,25 @@ coefficient matrix where the element in the ith row, jth column
 represents the y^(i-1) \* x^(j-1) coefficient:
 
 ``` r
-treeToPoly(threeTipTree)
-#>      [,1] [,2] [,3] [,4]
-#> [1,]    0    0    0    1
-#> [2,]    1    1    0    0
-#> [3,]    0    0    0    0
+treeToPoly(threeTipTree, varLabels = T)
+#>     x^0 x^1 x^2 x^3
+#> y^0   0   0   0   1
+#> y^1   1   1   0   0
+#> y^2   0   0   0   0
 ```
+
+Using the coefficients of the polynomials, distances between trees can
+be compared, below the two closest trees to a random target tree are
+found from a random sample:
+
+``` r
+# random 12 tip target tree 
+target <- rtree(12)
+
+# random sample of 100 trees
+sample <- rmtree(100,12)
+
+minInfo <- plotExtremeTrees(target,sample, n = 2, comparison = "min", type = "d")
+```
+
+![](man/figures/README-plotExtremeTrees-1.png)<!-- -->
