@@ -26,14 +26,20 @@
 #' @export
 wedge <- function(A, B) {
 
-  type = class(A[1])
+  if(typeof(A) == "double") {
+    if(typeof(A) != typeof(B)){
+      stop("wedge operands type must match")
+    }
 
-  if (type == "numeric" && class(A) == "matrix") {
     wedgeExport(A,B)
-  } else if (type == "complex") {
+  } else if (typeof(A) == "complex") {
+    if(typeof(A) != typeof(B)){
+      stop("wedge operands type must match")
+    }
+
     as.vector(wedgeExportConv(A,B))
   } else {
-    if(all(A == "leaf" & B == "leaf")){
+    if(all(c(A == "leaf", B == "leaf"))){
       res <- rtree(2, br = NULL)
     } else if (is.character(A)){
       res <- bind.tree(rtree(2, br = NULL), B, where = 1)

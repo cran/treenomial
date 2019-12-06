@@ -23,6 +23,13 @@ arXiv:1904.03332 (2019).](https://arxiv.org/abs/1904.03332)
 
 ## Installation
 
+To install using [CRAN](https://cran.r-project.org/package=treenomial):
+
+    install.packages("treenomial")
+
+The development version can be installed with the ‘devtools’ package:
+
+    library(devtools)
     install_github("mattgou1d/treenomial")
 
 ## Example tree and polynomial
@@ -48,4 +55,5 @@ treeToPoly(threeTipTree)
 #>      [,1] [,2] [,3] [,4]
 #> [1,]    0    0    0    1
 #> [2,]    1    1    0    0
+#> [3,]    0    0    0    0
 ```

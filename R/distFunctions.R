@@ -32,11 +32,11 @@
 polyDist <- function(x, Y, method = "logDiff", numThreads = -1){
   # check input arguments
 
-      if(class(x) == "list"){
+      if(any(class(x) == "list")){
         stop("argument x must not be a list")
       }
 
-      if(class(Y) == "matrix"){
+      if(any(class(Y) == "matrix")){
         Y <- list(Y)
       }
 
@@ -44,11 +44,11 @@ polyDist <- function(x, Y, method = "logDiff", numThreads = -1){
         stop("invalid method")
       }
 
-      if(typeof(x) == "double"){
+      if(any(typeof(x) == "double")){
         coefficientMatrices <- alignCoeffs(c(list(x),Y), type = "real")
         coeffDist(coefficientMatrices, method = method, nThreads = numThreads)
 
-      } else if(typeof(x) == "complex"){
+      } else if(any(typeof(x) == "complex")){
         if(dim(x)[[1]] == 1){
           if(method != "logDiff") warning("only the logDiff method is available for the complex polynomial")
           coefficientMatrices <- alignCoeffs(c(x,Y), type = "complex")
@@ -96,11 +96,11 @@ polyDist <- function(x, Y, method = "logDiff", numThreads = -1){
 #' @export
 treeDist <- function(x, Y, type = "real", method = "logDiff", numThreads = -1){
 
-  if(class(x) == "list"){
+  if(any(class(x) == "list")){
     stop("argument x must not be a list")
   }
 
-  if(class(Y) == "phylo"){
+  if(any(class(Y) == "phylo")){
     Y <- list(Y)
   }
 
@@ -154,12 +154,12 @@ polyToDistMat <- function(coefficientMatrices, method = "logDiff", numThreads = 
   }
 
   # check input arguments
-  if(class(coefficientMatrices) == "list"){
-    if(class(coefficientMatrices[[1]]) == "matrix"){
-      if(typeof(coefficientMatrices[[1]]) == "double"){
+  if(any(class(coefficientMatrices) == "list")){
+    if(any(class(coefficientMatrices[[1]]) == "matrix")){
+      if(any(typeof(coefficientMatrices[[1]]) == "double")){
         coefficientMatrices <- alignCoeffs(coefficientMatrices, type = "real")
         distMat <- coeffDistMat(coefficientMatrices, method = method, nThreads = numThreads)
-      } else if(typeof(coefficientMatrices[[1]]) == "complex"){
+      } else if(any(typeof(coefficientMatrices[[1]]) == "complex")){
         if(dim(coefficientMatrices[[1]])[[1]] == 1){
           if(method != "logDiff") warning("only the logDiff method is available for the complex polynomial")
           coefficientMatrices <- alignCoeffs(coefficientMatrices, type = "complex")
@@ -233,11 +233,11 @@ treeToDistMat <- function(trees, method = "logDiff", type = "real", numThreads =
 #' @export
 plotExtremeTrees <- function(target, trees, n, comparison = "min", method = "logDiff", type = "real", numThreads = -1) {
 
-  if(class(target) == "list"){
+  if(any(class(target) == "list")){
     stop("argument target must not be a list")
   }
 
-  if(class(trees) == "phylo"){
+  if(any(class(trees) == "phylo")){
     trees <- list(trees)
   }
 

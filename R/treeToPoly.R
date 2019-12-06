@@ -188,9 +188,9 @@ treeToPoly <- function(trees, type = "real", numThreads = -1) {
 #' @export
 alignPoly <- function(coefficientMatrices){
   # check input arguments
-  if(class(coefficientMatrices) == "list"){
-    if(class(coefficientMatrices[[1]]) == "matrix"){
-      if(typeof(coefficientMatrices[[1]]) == "double"){
+  if(any(class(coefficientMatrices) == "list")){
+    if(any(class(coefficientMatrices[[1]]) == "matrix")){
+      if(any(typeof(coefficientMatrices[[1]]) == "double")){
         coefficientMatrices <- alignCoeffs(coefficientMatrices, type = "real")
       } else if(typeof(coefficientMatrices[[1]]) == "complex"){
         if(dim(coefficientMatrices[[1]])[[1]] == 1){

@@ -51,7 +51,7 @@ inline SpMat<double> wedge(SpMat<double> &A, SpMat<double> &B){
   int colRes = 0;
   double coeffRes = 0;
 
-  mat resMat(ceil((A.n_cols + B.n_cols)/2), A.n_cols + B.n_cols-1,fill::zeros);
+  mat resMat(std::ceil(((double)A.n_cols + (double)B.n_cols)/2), A.n_cols + B.n_cols-1,fill::zeros);
 
   // add the extra + y term
   resMat(1,0) = 1;
