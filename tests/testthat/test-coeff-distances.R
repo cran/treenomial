@@ -95,8 +95,24 @@ test_that("tests with single and lists arguments", {
   expect_error(treeDist(list(threeTip),forestSixty, numThreads = 0))
   expect_error(treeDist(list(threeTip),list(forestSixty), numThreads = 0))
 
+
+  res <- treeDist(threeTip,forestSixty, numThreads = 0)
+  expect_equal(length(res),42)
+
+  res <- treeDist(threeTip,forestSixty, numThreads = 0, type = "yEvaluated", y = 1+1i)
+  expect_equal(length(res),42)
+
   coeffsSixty <- treeToPoly(forestSixty, numThreads = 0)
   coeffsThree <- treeToPoly(threeTip, numThreads = 0)
+
+  res <- polyDist(coeffsThree,coeffsSixty, numThreads = 0)
+  expect_equal(length(res),42)
+
+  coeffsSixty <- treeToPoly(forestSixty, numThreads = 0, type = "yEvaluated", y = 1+1i)
+  coeffsThree <- treeToPoly(threeTip, numThreads = 0, type = "yEvaluated", y = 1+1i)
+
+  res <- polyDist(coeffsThree,coeffsSixty, numThreads = 0)
+  expect_equal(length(res),42)
 
   expect_silent(polyDist(coeffsThree,coeffsThree, numThreads = 0))
   expect_silent(polyDist(coeffsThree,coeffsSixty, numThreads = 0))
@@ -108,5 +124,4 @@ test_that("tests with single and lists arguments", {
   expect_error(plotExtremeTrees(list(threeTip),forestSixty,1, numThreads = 0))
   expect_error(plotExtremeTrees(list(threeTip),list(forestSixty),1, numThreads = 0))
 })
-
 

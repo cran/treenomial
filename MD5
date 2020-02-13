@@ -1,11 +1,11 @@
-86cdfeeb520b58ee4ad68c85a4a1b862 *DESCRIPTION
+762355491ba7149130078416a8b35234 *DESCRIPTION
 a7812473fa4f8e6ff3a136d9b9d67bce *NAMESPACE
-d6fb673f2630ec2476cf2f3b91b1bf44 *NEWS.md
+636b030728458a79e773d87e310ee1cb *NEWS.md
 df5b4c495241592351a12fb5baafea78 *R/RcppExports.R
 1f783c8549f87ee969bc548eb1c03ff2 *R/allTrees.R
-6766c6c176120a939e285b8d41e41d51 *R/distFunctions.R
+96c0142388293433bb99376958bbc474 *R/distFunctions.R
 4409bc6d1756690e180348bc976fbb4a *R/treeJuliaSet.R
-0ce3727d6a1e6822932a62c9a7eaf65d *R/treeToPoly.R
+6d27373c068e0408856a413d4c6f026a *R/treeToPoly.R
 e4db327f65298f628caee71ec3b7f727 *R/wedge.R
 80fb964d66ff91194af0b4ac770cfb95 *README.md
 4939e2955e4f118ba075a27640785f46 *man/alignPoly.Rd
@@ -29,7 +29,7 @@ c9b7e9548c19a31aae09f4216abe8011 *src/RcppExports.cpp
 97a0dfd38cf3c8f6c70b7c382b686fbb *src/distFunctions.cpp
 d28b19f4aec39748460b2601df7dff47 *src/treeJuliaSet.cpp
 dd6b420f75460e6e1e09e7b5971125d6 *tests/testthat.R
-54c0e7f06dd1d441e1a692bfe1c442de *tests/testthat/Rplots.pdf
-fe44d07fef1f95b02daf3515e05e4231 *tests/testthat/test-coeff-building.R
-f589971d6ca4c733dfc5229b72c5a232 *tests/testthat/test-coeff-distances.R
+130c1749d9b80adfad30e72fe4832f2a *tests/testthat/Rplots.pdf
+0d3200b2a0465a826df63d8fda6f10ff *tests/testthat/test-coeff-building.R
+5e1c73c46f0ab18851a6fac264d32fb6 *tests/testthat/test-coeff-distances.R
 4ea79b044534de20cb3c9f97b785c69d *tests/testthat/test-wedge.R

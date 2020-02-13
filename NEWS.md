@@ -1,3 +1,7 @@
+# treenomial 1.1.2
+
+* Fixed a bug with the treeDist function when using the y evaluated form 
+
 # treenomial 1.1.1
 
 * Fixed errors when checking input arguments to functions 

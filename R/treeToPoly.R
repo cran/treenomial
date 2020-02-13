@@ -39,7 +39,7 @@
 #' treeToPoly(rmtree(4, 20), varLabels = TRUE, numThreads = 0)
 #'
 #' @export
-treeToPoly <- function(trees, type = c("default","yEvaluated","tipLabel"), y, varLabels = FALSE, numThreads = -1) {
+treeToPoly <- function(trees,type = c("default","yEvaluated","tipLabel"), y, varLabels = FALSE, numThreads = -1) {
 
   if(!missing(type) & length(type)>1) stop("only one 'type' allowed")
   type <- match.arg(type)
@@ -218,7 +218,7 @@ alignPoly <- function(coefficientMatrices){
     coefficientMatrices <- alignCoeffs(coefficientMatrices, type = "default")
 
   } else if(is(coefficientMatrices[[1]],"matrix") && (nrow(coefficientMatrices[[1]]) == 1)){
-    coefficientMatrices <- alignCoeffs(coefficientMatrices, type = "complex")
+    coefficientMatrices <- alignCoeffs(coefficientMatrices, type = "yEvaluated")
 
   } else if(is(coefficientMatrices[[1]],"matrix") && (typeof(coefficientMatrices[[1]]) == "complex")){
     coefficientMatrices <- alignCoeffs(coefficientMatrices, type = "tipLabel")

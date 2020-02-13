@@ -1,7 +1,7 @@
 Package: treenomial
 Type: Package
 Title: Comparison of Trees using a Tree Defining Polynomial
-Version: 1.1.1
+Version: 1.1.2
 Authors@R: 
   c(person(given = "Matthew",
            family = "Gould",
@@ -33,9 +33,9 @@ LinkingTo: Rcpp, RcppArmadillo, RcppThread
 RoxygenNote: 7.0.2
 Suggests: knitr, rmarkdown, testthat
 NeedsCompilation: yes
-Packaged: 2019-12-06 18:29:17 UTC; MattGould
+Packaged: 2020-02-13 00:52:50 UTC; matthewgould
 Author: Matthew Gould [aut, cre],
   Pengyu Liu [ctb],
   Caroline Colijn [ctb]
 Repository: CRAN
-Date/Publication: 2019-12-06 23:40:02 UTC
+Date/Publication: 2020-02-13 06:20:02 UTC
