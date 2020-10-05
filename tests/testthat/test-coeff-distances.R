@@ -25,6 +25,22 @@ test_that("test that different distance method have correct result (small manual
   expect_equal(dWLogDiff[2,4], testWlogL1(coeffs[[2]], coeffs[[4]]))
 
 
+  fakeCoeffA <- matrix(1,10,10)
+  fakeCoeffB <- matrix(2,10,10)
+
+  expect_equal(33.33,round(polyDist(fakeCoeffA,fakeCoeffB),2))
+
+  fakeCoeffA <- matrix(0,10,10)
+  fakeCoeffB <- matrix(0,10,10)
+
+  expect_equal(0,round(polyDist(fakeCoeffA,fakeCoeffB),2))
+
+  fakeCoeffA <- t(matrix(rep(1,100)))
+  fakeCoeffB <- t(matrix(rep(2,100)))
+
+  expect_equal(33.33,round(polyDist(fakeCoeffA,fakeCoeffB),2))
+
+
 })
 
 ## tests on treeToDistMat ##
@@ -35,7 +51,13 @@ test_that("test distance matrix of same trees is zero for each method", {
   distanceMatrix <- treeToDistMat(identicalForest, method = "logDiff", type = "yEvaluated", y=1+1i, numThreads = 0)
   expect_true(all(distanceMatrix == 0))
 
+  distanceMatrix <- treeToDistMat(identicalForest, method = "fraction", type = "yEvaluated", y=1+1i, numThreads = 0)
+  expect_true(all(distanceMatrix == 0))
+
   distanceMatrix <- treeToDistMat(identicalForest, method = "logDiff", numThreads = 0)
+  expect_true(all(distanceMatrix == 0))
+
+  distanceMatrix <- treeToDistMat(identicalForest, method = "fraction", numThreads = 0)
   expect_true(all(distanceMatrix == 0))
 
   distanceMatrix <- treeToDistMat(identicalForest, method = "wLogDiff", numThreads = 0)

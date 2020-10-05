@@ -1,3 +1,7 @@
+# treenomial 1.1.3
+
+* Add the new default metric "fraction"
+
 # treenomial 1.1.2
 
 * Fixed a bug with the treeDist function when using the y evaluated form 
