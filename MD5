@@ -1,6 +1,6 @@
-85fbbbb0ab8d77386ef416cd0a44962d *DESCRIPTION
+0492322c0dda66c0097d4c6ab03247fc *DESCRIPTION
 a7812473fa4f8e6ff3a136d9b9d67bce *NAMESPACE
-ee40f63622c68a5edf3d2417486b1211 *NEWS.md
+59beb62e57b9284135df9d2326c61940 *NEWS.md
 df5b4c495241592351a12fb5baafea78 *R/RcppExports.R
 1f783c8549f87ee969bc548eb1c03ff2 *R/allTrees.R
 7564ce58b20424130aa28da6c846a3d3 *R/distFunctions.R
@@ -20,9 +20,9 @@ d0c4422fd3303bacee828266cb3ec0f6 *man/treeJuliaSet.Rd
 7dc0480623cbe538c641aacf86473270 *man/treeToDistMat.Rd
 57b2741d16eaf79467f66aa5364617ed *man/treeToPoly.Rd
 62d368bc4eb899af3bf891582c30742d *man/wedge.Rd
-15570717c2f61f5db63cfdedb447668e *src/Makevars
+aa5a06066c16fa7ecf71ca4a176941c5 *src/Makevars
 15570717c2f61f5db63cfdedb447668e *src/Makevars.win
-c9b7e9548c19a31aae09f4216abe8011 *src/RcppExports.cpp
+5a83800f49349ba49cc1e64e891a35e4 *src/RcppExports.cpp
 0d9bbfafa35c66eeb04c15a5d57513b6 *src/allBinTreeShape.cpp
 205ead8c66cac2ddca0304df8d8c92cb *src/coeffMatrix.cpp
 495b2f4a5d531be921cb86786f89d0fa *src/coeffMatrix.h
